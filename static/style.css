@@ -1,0 +1,140 @@
+/* =========================
+   Reset & base
+========================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(120deg, #f4f7fb, #e9eff5);
+    min-height: 100vh;
+    color: #2c3e50;
+}
+
+/* =========================
+   Layout
+========================= */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   Titles
+========================= */
+h1 {
+    text-align: center;
+    margin-bottom: 24px;
+    color: #1f2d3d;
+}
+
+h2 {
+    margin-top: 32px;
+    margin-bottom: 16px;
+    color: #34495e;
+    border-left: 4px solid #4a90e2;
+    padding-left: 12px;
+}
+
+/* =========================
+   Navigation / Links
+========================= */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+nav a {
+    text-decoration: none;
+    background: #4a90e2;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+nav a:hover {
+    background: #357abd;
+    transform: translateY(-1px);
+}
+
+/* =========================
+   Forms
+========================= */
+form {
+    margin-top: 16px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccd6dd;
+    font-size: 14px;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+/* =========================
+   Buttons
+========================= */
+button {
+    background: #4a90e2;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background: #357abd;
+    transform: translateY(-1px);
+}
+
+/* =========================
+   Sections / cards
+========================= */
+.card {
+    background: #f9fbfd;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 24px;
+    border: 1px solid #e1e8ee;
+}
+
+/* =========================
+   Footer / small text
+========================= */
+.footer {
+    text-align: center;
+    margin-top: 32px;
+    font-size: 13px;
+    color: #7f8c8d;
+}

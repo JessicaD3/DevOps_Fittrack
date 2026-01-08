@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Créer utilisateur</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Créer un utilisateur</h1>
+
+    <div class="card">
+        <form method="post">
+            <label>Nom</label>
+            <input name="nom" required>
+
+            <label>Prénom</label>
+            <input name="prenom" required>
+
+            <label>Sexe</label>
+            <select name="sexe" required>
+                <option value="F">Femme</option>
+                <option value="M">Homme</option>
+                <option value="X">Autre</option>
+            </select>
+
+            <label>Date de naissance</label>
+            <input type="date" name="date_naissance" required>
+
+            <button type="submit">Créer</button>
+        </form>
+    </div>
+
+    <a href="/">← Retour accueil</a>
+</div>
+
+</body>
+</html>

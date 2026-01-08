@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Ajouter un repas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Ajouter un repas</h1>
+
+    <div class="card">
+        <form method="post">
+            <label>ID utilisateur</label>
+            <input name="user_id" value="1" required>
+
+            <label>Date</label>
+            <input type="date" name="date_log" required>
+
+            <label>Type de repas</label>
+            <select name="type_repas" required>
+                <option value="petit_dej">Petit-déjeuner</option>
+                <option value="dejeuner">Déjeuner</option>
+                <option value="diner">Dîner</option>
+                <option value="collation">Collation</option>
+            </select>
+
+            <label>Calories</label>
+            <input type="number" name="calories" required>
+
+            <button type="submit">Enregistrer</button>
+        </form>
+    </div>
+
+    <a href="/">← Retour accueil</a>
+</div>
+
+</body>
+</html>
