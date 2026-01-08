@@ -14,13 +14,14 @@
         <a href="/users/new">Créer utilisateur</a>
         <a href="/weights/new">Ajouter poids</a>
         <a href="/meals/new">Ajouter repas</a>
+         <a href="/suivi">Voir le suivi</a>
     </nav>
 
     <div class="card">
         <h2>Générer le rapport PDF</h2>
         <form method="get" action="/report">
-            <label>ID utilisateur</label>
-            <input name="user_id" value="1" required>
+            <label>User ID</label>
+            <input name="user_id" value="1">
             <button type="submit">Télécharger le PDF</button>
         </form>
     </div>

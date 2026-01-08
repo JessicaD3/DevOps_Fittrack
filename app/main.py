@@ -3,8 +3,15 @@ from flask import Flask, render_template, request, redirect, url_for, send_file
 from app.db import get_conn
 from app.imc import calcul_imc, categorie_imc
 from app.pdf_report import generate_pdf_report
+from pathlib import Path
 
-app = Flask(__name__)
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+app = Flask(
+    __name__,
+    template_folder=BASE_DIR / "templates",
+    static_folder=BASE_DIR / "static"
+)
 
 def get_height_from_jenkins_or_default():
 
@@ -92,6 +99,37 @@ def meal_new_submit():
     cur.close()
     conn.close()
     return redirect(url_for("index"))
+
+@app.get("/suivi")
+def suivi():
+    conn = get_conn()
+    cur = conn.cursor()
+
+    
+    cur.execute("""
+        SELECT date_log, poids_kg, imc, categorie_imc
+        FROM weight_logs
+        ORDER BY date_log
+    """)
+    weights = cur.fetchall()
+
+    
+    cur.execute("""
+        SELECT date_log, type_repas, calories
+        FROM meal_logs
+        ORDER BY date_log
+    """)
+    meals = cur.fetchall()
+
+    cur.close()
+    conn.close()
+
+    return render_template(
+        "suivi.html",
+        weights=weights,
+        meals=meals
+    )
+
 
 @app.get("/report")
 def report():

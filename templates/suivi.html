@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Suivi quotidien</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Suivi quotidien</h1>
+
+    
+    <div class="card">
+        <h2>Journal de poids</h2>
+
+        {% if weights and weights|length > 0 %}
+        <table style="width:100%; border-collapse: collapse;">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Poids (kg)</th>
+                    <th>IMC</th>
+                    <th>Catégorie</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for d, p, imc, cat in weights %}
+                <tr>
+                    <td>{{ d }}</td>
+                    <td>{{ p }}</td>
+                    <td>{{ imc }}</td>
+                    <td>{{ cat }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+            <p>Aucune donnée de poids enregistrée.</p>
+        {% endif %}
+    </div>
+
+    
+    <div class="card">
+        <h2>Repas et calories</h2>
+
+        {% if meals and meals|length > 0 %}
+        <table style="width:100%; border-collapse: collapse;">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Type de repas</th>
+                    <th>Calories</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for d, type, cal in meals %}
+                <tr>
+                    <td>{{ d }}</td>
+                    <td>{{ type }}</td>
+                    <td>{{ cal }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+            <p>Aucun repas enregistré.</p>
+        {% endif %}
+    </div>
+
+    <a href="/">← Retour à l’accueil</a>
+
+</div>
+
+</body>
+</html>
