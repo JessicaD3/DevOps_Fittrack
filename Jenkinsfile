@@ -12,10 +12,10 @@ pipeline {
         stage('Install dependencies') {
             steps {
                 bat '''
-                python -m venv venv
+                "C:\\Users\\UTILISATEUR_2025\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" -m venv venv
                 call venv\\Scripts\\activate
-                pip install --upgrade pip
-                pip install -r requirements.txt
+                "C:\\Users\\UTILISATEUR_2025\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" -m pip install --upgrade pip
+                "C:\\Users\\UTILISATEUR_2025\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" -m pip install -r requirements.txt
                 '''
             }
         }
@@ -24,7 +24,7 @@ pipeline {
             steps {
                 bat '''
                 call venv\\Scripts\\activate
-                pytest
+                "C:\\Users\\UTILISATEUR_2025\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" -m pytest
                 '''
             }
         }
@@ -33,7 +33,7 @@ pipeline {
             steps {
                 bat '''
                 call venv\\Scripts\\activate
-                python -m app.pdf_report
+                "C:\\Users\\UTILISATEUR_2025\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" -m app.pdf_report
                 '''
             }
         }
