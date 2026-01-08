@@ -79,3 +79,7 @@ def generate_pdf_report(user_id: int, out_path: str = "report.pdf") -> str:
     doc = SimpleDocTemplate(out_path, pagesize=A4)
     doc.build(story)
     return out_path
+
+if __name__ == "__main__":
+    generate_pdf_report(user_id=1, out_path="report_fittrack.pdf")
+
